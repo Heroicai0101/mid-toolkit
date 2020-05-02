@@ -4,6 +4,7 @@ import com.cgx.middleware.extension.model.ExtensionCoordinate;
 import com.cgx.middleware.extension.model.IExtensionPoint;
 
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -42,7 +43,7 @@ public final class ExtensionManager {
      * 全部扩展点实例; 可用户扩展点可视化管理
      */
     public Map<ExtensionCoordinate, IExtensionPoint> listAllExtPoint() {
-        return Collections.unmodifiableMap(extensionHub);
+        return Collections.unmodifiableMap(new LinkedHashMap<>(extensionHub));
     }
 
 }
